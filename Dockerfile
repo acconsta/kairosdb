@@ -32,11 +32,11 @@ RUN apt-get update && \
     apt-get install -y gettext
 
 ADD kairosdb.properties /tmp/kairosdb.properties
-ADD runKairos.sh /usr/bin/runKairos.sh
-RUN chmod +x /usr/bin/runKairos.sh
+ADD run_kairos.sh /usr/bin/run_kairos.sh
+RUN chmod +x /usr/bin/run_kairos.sh
 
 # Kairos API telnet and jetty ports
 EXPOSE 4242 8083
 
 # Run kairosdb in foreground on boot
-ENTRYPOINT ["/usr/bin/runKairos.sh"]
+ENTRYPOINT ["/usr/bin/run_kairos.sh"]
